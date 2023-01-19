@@ -1,0 +1,29 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: gamification-fe-services-production
+  namespace: {{ .Values.name.space }}
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    run: gamification-frontend-production
+spec:
+  host: ingrid.apps.mypaas.telkom.co.id
+  to:
+    kind: Service
+    name: gamification-system-services-production
+    weight: 100
+  port:
+    targetPort: 3000
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: None
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: ingrid.apps.mypaas.telkom.co.id
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+      wildcardPolicy: None
+      routerCanonicalHostname: router-default.apps.mypaas.telkom.co.id

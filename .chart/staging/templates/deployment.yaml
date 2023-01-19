@@ -1,0 +1,31 @@
+# k8s deployment menggunakan Helm --> see /.k8s-deploy.old.yml untuk versi non Helm (pada dasarnya sama)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    meta.helm.sh/release-name: gamification-fe-services-staging
+    meta.helm.sh/release-namespace: {{ .Values.name.space }}
+  labels:
+    app: gamification-fe-staging
+    app.kubernetes.io/managed-by: Helm
+  name: gamification-fe-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gamification-fe-staging
+  template:
+    metadata:
+      labels:
+        app: gamification-fe-staging
+    spec:
+      containers:
+      - image: harbor.telkom.co.id/dit-bpo-gamification/gamification-fe-staging:{{ .Values.image.version }}
+        name: gamification-fe-staging
+        ports:
+        - containerPort: 3000
+        envFrom:
+          - secretRef:
+              name: nextenv
+      imagePullSecrets:
+      - name: {{ .Values.secret.name }}

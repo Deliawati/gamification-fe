@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import '2048/main.scss';
+@import '2048/styles.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(130.76deg, rgba(82, 77, 87, 0.5) -8.36%, rgba(230, 34, 34, 0.8) 62.57%);
+  height: auto;
+}
+
+.color1 {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.gradient-color {
+  background: linear-gradient(180deg, #D22828 0%, #EAEFF6 100%);
+}
+.gradient-color1 {
+  background: linear-gradient(130.76deg, rgba(87, 77, 77, 0.5) -8.36%, rgba(230, 34, 34, 0.8) 62.57%);
+}
+.gradient-color2 {
+  background: linear-gradient(130.76deg, rgba(214, 0, 0, 0.5) -8.36%, rgba(32, 4, 4, 0.5) 62.57%);
+}
+
+.shadow-inner {
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-inner1 {
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.shadow {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.39);
+}
+
+.shadow1 {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.shadow2 {
+  box-shadow: 0px -2px 14px 2px #F2FFCA;
+}
+
+.shadow3 {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.39);
+}
+
+.blur {
+  filter: blur(0.5px);
+}
+
+// canvas {
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   padding-left: 370px !important;
+//   // box-shadow: inset 20px;
+// }
+
+* {
+  box-sizing: border-box;
+}
+
+// .border-custom {
+  // border: 2px solid linear-gradient(90.86deg, #FFFFFF 0%, rgba(255, 255, 255, 0.6) 0.01%, rgba(255, 255, 255, 0.4) 49.17%, rgba(255, 255, 255, 0.2) 100%);
+  // border: 2px solid black;
+// }
+
+.custom {
+  background : linear-gradient(90.86deg, #FFFFFF 0%, rgba(255, 255, 255, 0.6) 0.01%, rgba(255, 255, 255, 0.4) 49.17%, rgba(255, 255, 255, 0.2) 100%)
+}
+
+// sadasdas
